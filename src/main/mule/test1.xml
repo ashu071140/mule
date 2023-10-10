@@ -9,16 +9,9 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
 http://www.mulesoft.org/schema/mule/ee/bti http://www.mulesoft.org/schema/mule/ee/bti/current/mule-bti-ee.xsd">
-	<os:object-store name="Object_store" doc:name="Object store" doc:id="baa2e84c-0712-4f54-ae69-7f404249c1f4" config-ref="ObjectStore_Config"/>
-	<os:config name="ObjectStore_Config" doc:name="ObjectStore Config" doc:id="95bfc8fc-8fa3-47b4-a7e3-7a48b3cd387b" >
-		<os:connection />
-	</os:config>
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="67fcc901-2646-40bb-b0f3-e5e0605cbd24" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
-	<jms:config name="JMS_Config" doc:name="JMS Config" doc:id="e241bb83-dcb9-42fe-a492-09665c543967" >
-		<jms:active-mq-connection username="admin" password="admin"/>
-	</jms:config>
 	<flow name="test1Flow1" doc:id="3f2da3dd-5d22-4af9-a891-0290eb7bc4ec" >
 		<http:listener doc:name="Listener" doc:id="83e4410a-5be4-447e-ac69-f14be747249f" config-ref="HTTP_Listener_config" path="/sample" responseStreamingMode="ALWAYS"/>
 		<ee:transform doc:name="Transform Message" doc:id="230a8a9b-8249-474f-8e0a-c420ac8ce7b7" >
